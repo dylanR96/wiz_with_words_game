@@ -1,8 +1,8 @@
 // const User = mongoose.model(collection, userSchema);
-const addUser = require("../../models/modelUser.js");
+const addUserModel = require("../../models/modelUser.js");
 
-const testFunction = async () => {
-  const testUser = new addUser({
+const addUser = async (req, res, next) => {
+  const userQuery = new addUserModel({
     username: "testuser",
     password: "password",
     email: "skrap@andreasb.se",
@@ -10,7 +10,7 @@ const testFunction = async () => {
     active: false,
   });
 
-  testUser.save();
+  userQuery.save();
 };
 
-module.exports = testFunction;
+module.exports = addUser;
