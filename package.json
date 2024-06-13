@@ -1,0 +1,26 @@
+{
+  "name": "wiz_with_words_game",
+  "version": "1.0.0",
+  "description": "with other words game",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dylanR96/wiz_with_words_game.git"
+  },
+  "author": "Andreas and Dylan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dylanR96/wiz_with_words_game/issues"
+  },
+  "homepage": "https://github.com/dylanR96/wiz_with_words_game#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1",
+    "nodemon": "^3.1.3"
+  }
+}
