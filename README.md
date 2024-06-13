@@ -5,3 +5,4 @@ Installed packages
 - express
 - cors
 - mongoose
+- nodemon
