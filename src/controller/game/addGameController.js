@@ -2,7 +2,7 @@ const addGameModel = require("../../models/modelGame.js");
 
 const addGame = async (req, res, next) => {
   const { gameCode, gameMode, maxRounds, teams } = req.body;
-  const gameQuery = new addGameModel({
+  const newGame = new addGameModel({
     gameCode: gameCode,
     gameMode: gameMode,
     maxRounds: maxRounds,
@@ -10,7 +10,7 @@ const addGame = async (req, res, next) => {
     createdAt: Date.now(),
     lastUpdated: Date.now(),
   });
-  await gameQuery.save();
+  await newGame.save();
   res.status(200).send("Game added");
 };
 
