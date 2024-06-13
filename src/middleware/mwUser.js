@@ -6,6 +6,10 @@ const addUserSchema = joi.object({
   password: joi.string().min(6).max(20).required(),
   email: joi.string().email().required(),
 });
+const loginSchema = joi.object({
+  username: joi.string().alphanum().required(),
+  password: joi.string().required(),
+});
 
 const addUserMiddleware = async (req, res, next) => {
   // Joi validation
@@ -29,7 +33,16 @@ const addUserMiddleware = async (req, res, next) => {
     }
     return res.status(400).json({ errors });
   }
+  next();
+};
+const loginMiddleware = (req, res, next) => {
+  // Joi validation
+  const { error } = loginSchema.validate(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
 
   next();
 };
-module.exports = addUserMiddleware;
+module.exports = {
+  addUserMiddleware,
+  loginMiddleware,
+};
