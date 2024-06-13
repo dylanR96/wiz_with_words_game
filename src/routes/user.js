@@ -1,10 +1,13 @@
 const { Router } = require("express");
-const router = Router();
 const addUser = require("../controller/users/addUserController.js");
+const addUserMiddleware = require("../middleware/mwUser.js");
+
+const router = Router();
+
 router.get("/", (req, res, next) => {
   res.send("Testing user one two");
 });
-router.post("/register", addUser);
+router.post("/register", addUserMiddleware, addUser);
 module.exports = router;
 
 // Vilka funktioner vill vi ha:
