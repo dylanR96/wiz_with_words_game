@@ -2,7 +2,7 @@
 const addUserModel = require("../../models/modelUser.js");
 
 const addUser = async (req, res, next) => {
-  const userQuery = new addUserModel({
+  const newUser = new addUserModel({
     username: "testuser",
     password: "password",
     email: "skrap@andreasb.se",
@@ -10,7 +10,7 @@ const addUser = async (req, res, next) => {
     active: false,
   });
 
-  userQuery.save();
+  newUser.save();
 };
 
 module.exports = addUser;
